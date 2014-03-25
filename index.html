@@ -6,9 +6,42 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="text/javascript" src="js/scripts.js"></script>
 		<link type="text/css" rel="stylesheet" href="css/styles.css" />
-
+		<link rel="stylesheet" href="css/kickstart.css" media="all" /> <!-- KICKSTART -->
 	</head>
-	<body>
-		Teste
+	<body class="elements">
+		<nav class="navbar">
+			<div id="buttons" class="hide-phone">
+				<button type="button" class="small blue" >Sign up</button>
+				<label for="text2" style="font-size:12px">Already a member?</label>
+				<button type="button" class="small green" >Log in</button>
+			</div>
+			<ul>
+				<li><a href="about.html">Get Started</a></li>
+				<li><a href="contact.html">Contact us</a></li>
+			</ul>
+		</nav>
+		<article class="article">
+			<sect
+			<div class="col_8">
+				<h5>Most shared Photos</h5>
+			</div>
+			<div class="col_4"> 			
+			<div id="fb-root"></div>
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+				</script>
+ 			<div class="fb-like" data-href="https://www.facebook.com/csf.da.depressao?ref=profile" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+ 			</div>
+		</article>
+
+		<footer>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/kickstart.js"></script> <!-- KICKSTART -->
 	</body>
 </html>
