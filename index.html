@@ -1,72 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Upload Photos</title>
+		<title>Photos 4 Life</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="text/javascript" src="js/scripts.js"></script>
+		
 		<link type="text/css" rel="stylesheet" href="css/styles.css" />
-		<link rel="stylesheet" href="css/kickstart.css" media="all" /> <!-- KICKSTART -->
+		<link rel="stylesheet" href="css/kickstart.css" media="all" />
 	</head>
-	<body class="elements">
-		<nav class="navbar">
-			<div id="buttons" class="hide-phone">
-				<button type="button" class="small blue" >Sign up</button>
-				<label for="text2" style="font-size:12px">Already a member?</label>
-				<button type="button" class="small green" >Log in</button>
-			</div>
-			<ul>
-				<li><a href="about.html">Get Started</a></li>
-				<li><a href="contact.html">Contact us</a></li>
-			</ul>
-		</nav>
-		<article class="article">
+	<body class="elements" onload="getNavBar();getFooter();getPhotos();">
+		<!-- FACEBOOK ELEMENTS START-->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<!-- FACEBOOK ELEMENTS END-->
+		<nav id="navbar"></nav>
 
-			<div class="col_8">
+		<div id="main">
+			<div class="col_8 main-left" id="main-left">
 				<h5>Most popular photos</h5>
-
-
-				<div class="index-photo">
-					<p>Posted by <a href="profile.html">Italo</a> - 2 minutes ago</p>
-					<img class="align-left" src="images/filegeo.jpg"/>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism...<a href="">(read full description)</a></p>
-					<p><i class="icon-edit icon-2x"></i><a href="image.html">1 comment(s)</a></p>
-					<p>Post on facebook - PUT BUTTON</p>
-				</div>
-
-				<div class="clearfix"></div>
-				<div class="index-photo">
-					<p>Posted by <a href="profile.html">Andre</a> - 1 week ago</p>
-					<img class="align-left" src="images/file5511311905470.jpg"/>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism...<a href="">(read full description)</a></p>
-					<p><i class="icon-edit icon-2x"></i><a href="image.html">50 comment(s)</a></p>
-					<p>Post on facebook - PUT BUTTON</p>
-				</div>
-
-				<div class="clearfix"></div>
-				<div class="index-photo">
-					<p>Posted by <a href="profile.html">Lino</a> - 3 years ago</p>
-					<img class="align-left" src="images/100_3702.JPG"/>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism...<a href="">(read full description)</a></p>
-					<p><i class="icon-edit icon-2x"></i><a href="image.html">11 comment(s)</a></p>
-					<p>Post on facebook - PUT BUTTON</p>
-				</div>
 			</div>
 
-			<div class="col_4"> 
-				<h6>TEST</h6>
-				<ul>
-					<li>A</li>
-					<li>B</li>
-					<li>C</li>
-					<li>D</li>
-				</ul>
+			<div class="col_4" >
+					<br /><br />
+					<br /><br />
+					<input id="textSearch" type="text" placeholder="Find out more..." value=""/>
+					<select id="selectType">
+						<option value="0">Photos</option>
+						<option value="1">Users</option>
+					</select>
+					<button type='button' style="font-weight:bold;"class='small blue' onclick='searchPhotosUsers(this);'>Search</button>
  			</div>
- 		
-		</article>
-		<footer>
-		</footer>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="js/kickstart.js"></script> <!-- KICKSTART -->
+		</div>
+
+		<div id="footer"></div>
+
+		<!-- Javascripts START-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+		</script>
+		<script type="text/javascript" src="js/kickstart.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+		<!-- Javascripts END-->
 	</body>
 </html>

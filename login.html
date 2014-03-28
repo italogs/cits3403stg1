@@ -1,1 +1,46 @@
-sd
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Photos 4 Life</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link type="text/css" rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="css/kickstart.css" media="all" />
+		<style type="text/css">
+
+		</style>
+	</head>
+	<body class="elements" onload="getNavBar();getFooter();">
+		<nav id="navbar"></nav>
+
+		<div id="main" >
+			<div class="col_6" style="padding-left:200px">
+				<h4>I'm registered</h4>
+				<span id="noticeForm">
+				</span>
+					<label style="width:65px" for="email" required>E-mail</label>
+					<input id="formEmail" type="email"/>
+					<br />
+					<div style="margin-top:10px">
+						<label style="width:65px;" for="password" required>Password</label>
+						<input id="formPassword" type="password" />
+					</div>
+					<button class="medium green" onclick="makeLogin();">Log in</button>
+			</div>
+			<div class="col_6">
+				<h4>I'm not registered.<br> What do I do?</h4>
+				<button class="medium blue" onclick="location.href='register.html'">Click here</button>
+			</div>
+		</div>
+
+		<div id="footer"></div>
+
+		<!-- Javascripts START-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+		</script>
+		<script type="text/javascript" src="js/kickstart.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+		<!-- Javascripts END-->
+	</body>
+</html>
