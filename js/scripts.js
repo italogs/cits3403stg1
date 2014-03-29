@@ -1,7 +1,17 @@
 //http://www.willpeavy.com/minifier/
 
+$( document ).ready(function() {
+	document.title= "Photos4Life";
+});
+
+function buildNoticeError(msg){
+	var htmlFirst = "<div style='margin-top:0px'class='notice error'><i class='icon-remove-sign icon-large'></i>";
+	var htmlLast = "<a href='#close' class='icon-remove'></a></div>";
+	return htmlFirst + msg + htmlLast;
+}
+
 function getNavBar(){
-	document.getElementById('navbar').innerHTML = "<div id='buttons' class='hide-phone'><button type='button' class='small blue' style='margin-right:12px' onclick='goToRegister();'>Sign up</button><label style='font-size:12px;'>Already a member?</label><button type='button' class='small green' style='margin-left:8px' onclick='goToLogIn();'>Log in</button></div><ul><li><a href='about.html'>Get Started</a></li><li><a href='contact.html'>Contact us</a></li></ul>";
+	document.getElementById('navbar').innerHTML = "<div id='buttons' class='hide-phone'><button type='button' class='small blue' style='margin-right:12px' onclick='goToRegister();'>Sign up</button><label style='font-size:12px;'>Already a member?</label><button type='button' class='small green' style='margin-left:8px' onclick='goToLogIn();'>Log in</button></div><ul><li><a href='index.html'>Photos4Life</a></li><li><a href='index.html'>Get Started</a></li><li><a href='index.html'>Contact us</a></li></ul>";
 }
 
 function getFooter(){
@@ -15,14 +25,18 @@ function getPhotos(){
 }
 
 function searchPhotosUsers(a){
-	var type = $('#selectType').val();
-	if(type==0){
-		type = "Photos";
-	} else{
-		type = "Users";
-	}
 	var query = $('#textSearch').val();
-	alert("Search-> query:"+query+" type: "+type)
+	if(query.length == 0){
+		alert('Please, provide some information.');
+	} else {
+		var type = $('#selectType').val();
+		if(type==0){
+			type = "Photos";
+		} else{
+			type = "Users";
+		}
+		$('#main-left').html('Sorry, no results were found.');
+	}
 }
 
 function test(){
@@ -45,7 +59,6 @@ function makeLogin(){
 }
 
 function isLoginDataValid(){
-
 	$('#formEmail').removeClass();
 	$('#formPassword').removeClass();
 	$('#noticeForm').html('');
@@ -56,17 +69,89 @@ function isLoginDataValid(){
 
 	if(email.length == 0){
 		$('#formEmail').addClass('error');
-		$('#noticeForm').html("<div class='notice error'><i class='icon-remove-sign icon-large'></i> Email must be provided<a href='#close' class='icon-remove'></a></div>");
+		$('#noticeForm').html(buildNoticeError("Email must be provided"));
 		valid = false;
 	} else if(!re.test(email)){
 		$('#formEmail').addClass('error');
-		$('#noticeForm').html("<div class='notice error'><i class='icon-remove-sign icon-large'></i> You must enter a valid email<a href='#close' class='icon-remove'></a></div>");
+		$('#noticeForm').html(buildNoticeError("You must enter a valid email"));
 		valid = false;
 	}
 	if (password.length == 0) {
 		$('#formPassword').addClass('error');
-		$('#noticeForm').html($('#noticeForm').html() + "<div class='notice error'><i class='icon-remove-sign icon-large'></i> Password must be provided<a href='#close' class='icon-remove'></a></div>");
+		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Password must be provided"));
 		valid = false;
 	}
 	return valid;
 }
+
+function passwordsMatch(){
+ 	return $('#inputPassword').val() == $('#inputPasswordRepeat').val();
+}
+
+function submitRegisterData(){
+	if(isRegisterDataValid()){
+		alert("Congratulations. Your data has been accepted. Now you're a member.");
+		location.href = "index.html";
+	}
+}
+
+function isRegisterDataValid(){
+	$('#inputFirstName').removeClass();
+	$('#inputSurname').removeClass();
+	$('#inputEmail').removeClass();
+	$('#inputPassword').removeClass();
+	$('#inputPasswordRepeat').removeClass();
+	$('#noticeForm').html('');
+
+	var firstName = $('#inputFirstName').val();
+	var surname = $('#inputSurname').val();
+	var email = $('#inputEmail').val();
+	var password = $('#inputPassword').val();
+	var passwordRepeat = $('#inputPasswordRepeat').val();
+
+	var re = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+	var valid = true;
+
+	if(firstName.length == 0){
+		valid = false;
+		$('#inputFirstName').addClass('error');
+		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("First name is required"));
+	}
+
+	if(surname.length == 0){
+		valid = false;
+		$('#inputSurname').addClass('error');
+		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Surname is required"));
+	}
+
+	if(email.length == 0){
+		valid = false;
+		$('#inputEmail').addClass('error');
+		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Email is required"));
+	} else if(!re.test(email)){
+		valid = false;
+		$('#inputEmail').addClass('error');
+		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("You must provide a valid email"));
+	}
+
+	if(password.length == 0){
+		valid = false;
+		$('#inputPassword').addClass('error');
+		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Password is required"));
+	}
+
+	if(passwordRepeat.length == 0){
+		valid = false;
+		$('#inputPasswordRepeat').addClass('error');
+		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("You must confirm your password"));
+	}
+
+	if(password.length != 0 && passwordRepeat.length != 0 && !passwordsMatch()){
+		valid = false;
+		$('#inputPassword').addClass('error');
+		$('#inputPasswordRepeat').addClass('error');
+		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Passwords don't match"));
+	}
+
+	return valid;
+}	

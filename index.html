@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Photos 4 Life</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
 		<link type="text/css" rel="stylesheet" href="css/styles.css" />
 		<link rel="stylesheet" href="css/kickstart.css" media="all" />
 	</head>
 	<body class="elements" onload="getNavBar();getFooter();getPhotos();">
 		<!-- FACEBOOK ELEMENTS START-->
+		<!--
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
 		var js, fjs = d.getElementsByTagName(s)[0];
@@ -18,7 +17,9 @@
 		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
 		fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
+		-->
 		<!-- FACEBOOK ELEMENTS END-->
+
 		<nav id="navbar"></nav>
 
 		<div id="main">
@@ -34,7 +35,8 @@
 						<option value="0">Photos</option>
 						<option value="1">Users</option>
 					</select>
-					<button type='button' style="font-weight:bold;"class='small blue' onclick='searchPhotosUsers(this);'>Search</button>
+
+					<button type='button' style="font-weight:bold;margin-top:5px"class='small blue' onclick='searchPhotosUsers(this);'>Search</button>
  			</div>
 		</div>
 
