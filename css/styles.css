@@ -16,25 +16,15 @@ body{
     display: flex;
     padding-left: 50px;
 }
-#main div{
-    margin-top:35px;
-    margin-bottom: 15px;
-}
+
 #main div img{
+    float: left;
     height:180px;
     width:180px;
 }
 
 .index-photo{
-    margin-left:35px;
-}
-
-.index-photo img{
-    width:100px;
-    height:100px;
-}
-.index-photo p{
-    
+    font-weight: normal;
 }
 
 #footer{

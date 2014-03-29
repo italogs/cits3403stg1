@@ -6,9 +6,9 @@
 		<link type="text/css" rel="stylesheet" href="css/styles.css" />
 		<link rel="stylesheet" href="css/kickstart.css" media="all" />
 	</head>
-	<body class="elements" onload="getNavBar();getFooter();getPhotos();">
+	<body class="elements" onload="getNavBar();getFooter();">
 		<!-- FACEBOOK ELEMENTS START-->
-		<!--
+		
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
 		var js, fjs = d.getElementsByTagName(s)[0];
@@ -17,7 +17,7 @@
 		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
 		fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
-		-->
+		
 		<!-- FACEBOOK ELEMENTS END-->
 
 		<nav id="navbar"></nav>
@@ -25,6 +25,40 @@
 		<div id="main">
 			<div class="col_8 main-left" id="main-left">
 				<h5>Most popular photos</h5>
+				
+				<div class='index-photo'>
+					<div class='gallery' style="float:left">
+						<a href='images/filegeo.jpg'><img src='images/filegeo.jpg'/></a>
+					</div>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism...<a href=''>(read full description)</a>
+					</p>
+					<p><i class='icon-edit icon-2x'></i><a href='image.html'>1 comment(s)</a>
+						<br />
+						<i>Tags:</i>&nbsp<a href=''>bird</a>&nbsp<a href=''>nature</a>
+					</p>
+					<div class='fb-share-button' data-href='http://student.csse.uwa.edu.au/~21382104/CITS3403/' data-width='200' data-type='button_count'></div>
+					<p>Posted by <a href='profile.html'>Italo</a> - 2 minutes ago</p>
+				</div>
+				<hr class='alt1' />
+				<div class='clearfix'></div>
+
+				<div class='index-photo'>
+					<div class='gallery' style="float:left">
+						<a href='images/file3021341154406.jpg'><img src='images/file3021341154406.jpg'/></a>
+					</div>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism...<a href=''>(read full description)</a>
+					</p>
+					<p><i class='icon-edit icon-2x'></i><a href='image.html'>1 comment(s)</a>
+						<br />
+						<i>Tags:</i>&nbsp<a href=''>bird</a>&nbsp<a href=''>nature</a>
+					</p>
+					<div class='fb-share-button' data-href='http://student.csse.uwa.edu.au/~21382104/CITS3403/' data-width='200' data-type='button_count'></div>
+					<p>Posted by <a href='profile.html'>Italo</a> - 2 minutes ago</p>
+				</div>
+				<hr class='alt1' />
+				<div class='clearfix'></div>
+			
+
 			</div>
 
 			<div class="col_4" >
@@ -36,7 +70,7 @@
 						<option value="1">Users</option>
 					</select>
 
-					<button type='button' style="font-weight:bold;margin-top:5px"class='small blue' onclick='searchPhotosUsers(this);'>Search</button>
+					<button type='button' style="font-weight:bold;margin-top:5px" class='small blue' onclick='searchPhotosUsers(this);'>Search</button>
  			</div>
 		</div>
 

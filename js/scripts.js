@@ -18,12 +18,6 @@ function getFooter(){
 	document.getElementById('footer').innerHTML = "<a href='http://jigsaw.w3.org/css-validator/check/referer'><img style='border:0;width:88px;height:31px' src='http://jigsaw.w3.org/css-validator/images/vcss' alt='CSS valid!'/></a>&nbsp;<a href='http://validator.w3.org/#validate_by_uri'><img src='http://www.w3.org/html/logo/badge/html5-badge-h-solo.png' width='63' height='64' alt='HTML5 Powered' title='HTML5 Powered'/></a><p>©2014 Photos 4 Life, All Rights Reserved</p>";
 }
 
-function getPhotos(){
-	for (var i = 0; i<3; i++) {
-		document.getElementById('main-left').innerHTML += "<div class='index-photo'><p>Posted by <a href='profile.html'>Italo</a> - 2 minutes ago</p><img class='align-left' src='images/filegeo.jpg' alt='abc'/><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism...<a href=''>(read full description)</a></p><p><i class='icon-edit icon-2x'></i><a href='image.html'>1 comment(s)</a><br /><br /><i>Tags:</i>&nbsp<a href=''>bird</a>&nbsp<a href=''>nature</a></p><div class='fb-share-button' style='display:inline' data-href='http://student.csse.uwa.edu.au/~21382104/CITS3403/' data-width='200' data-type='button_count'></div></div><hr class='alt1' /><div class='clearfix'></div>";
-	}
-}
-
 function searchPhotosUsers(a){
 	var query = $('#textSearch').val();
 	if(query.length == 0){
