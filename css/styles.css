@@ -17,14 +17,32 @@ body{
     padding-left: 50px;
 }
 
-#main div img{
+#main-left h5{
+    margin-bottom: 40px;
+}
+
+.index-photo {
+    padding-left: 50px;
+}
+
+.index-photo {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.index-photo img{
     float: left;
     height:180px;
     width:180px;
+    margin-right: 12px;
 }
 
-.index-photo{
-    font-weight: normal;
+.photoComments {
+    
+}
+
+.photoDescription{
+    text-align: left;
 }
 
 #footer{

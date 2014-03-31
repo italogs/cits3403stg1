@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link type="text/css" rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="css/kickstart.css" media="all" />
+	</head>
+	<body class="elements" onload="getNavBar();getFooter();">
+		<!-- FACEBOOK ELEMENTS START-->
+		
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		
+		<!-- FACEBOOK ELEMENTS END-->
+
+		<nav id="navbar"></nav>
+
+		<div id="main" style="display:block">
+			<div style="display:flex">
+					<div class="gallery col_5">
+						<a href="images/filegeo.jpg">
+							<img src="images/filegeo.jpg" width="400" height="360" />
+						</a>
+					</div>
+					<div class="col_7">
+						<span>Description:</span><br />
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+						</p>
+						<p>
+							<span>Tags:</span>&nbsp
+							<a href='index.html'>bird</a>
+							&nbsp
+							<a href='index.html'>nature</a>
+						</p>
+						<div class='fb-share-button' data-href='http://student.csse.uwa.edu.au/~21382104/CITS3403/' data-width='200' data-type='button_count'></div>
+						<p>Author: <a href='profile.html'>Italo</a></p>
+						<p>Posted at 23/03/2013 21:00:00</p> 
+					</div>
+			</div>
+			<h5>Comments (2)</h5>
+			<div class="photoComments">
+				<div>
+					<p>
+						Nice picture. Where did you find this bird?
+					</p>
+					<p>by Michael Jackson at 23/03/2013 23:13:00</p>
+				</div>
+				<div>
+					<p>
+						OMG. This picture is awesome. This is a rare bird.
+					</p>
+					<p>by Walt Disney at 23/03/2013 23:58:01</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="footer"></div>
+
+		<!-- Javascripts START-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+		</script>
+		<script type="text/javascript" src="js/kickstart.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+		<!-- Javascripts END-->
+	</body>
+</html>
