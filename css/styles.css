@@ -45,6 +45,20 @@ body{
     text-align: left;
 }
 
+.commentAuthor {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.commentHeader {
+    font-size: 11px;
+}
+
+.commentDescription {
+    font-size: 14px;
+    margin: 5px 15px 5px 10px;
+}
+
 #footer{
     margin:70px 50px 50px 50px;
     float:right;

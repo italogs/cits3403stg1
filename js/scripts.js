@@ -1,7 +1,7 @@
 //http://www.willpeavy.com/minifier/
 
 $( document ).ready(function() {
-	document.title= "Photos4Life";
+	//document.title= "Photos4Life";
 });
 
 function buildNoticeError(msg){
@@ -82,6 +82,15 @@ function isLoginDataValid(){
 
 function passwordsMatch(){
  	return $('#inputPassword').val() == $('#inputPasswordRepeat').val();
+}
+
+function checkPasswords(){
+	$('#inputPasswordRepeat').removeClass();
+	$('#noticeForm').html('');
+	if(!passwordsMatch()){
+		$('#inputPasswordRepeat').addClass('error');
+		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Passwords don't match"));
+	}
 }
 
 function submitRegisterData(){
