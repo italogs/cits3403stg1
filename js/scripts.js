@@ -1,7 +1,7 @@
 //http://www.willpeavy.com/minifier/
 
 $( document ).ready(function() {
-	//document.title= "Photos4Life";
+	document.title= "Photos4Life";
 });
 
 function buildNoticeError(msg){
@@ -20,7 +20,7 @@ function getFooter(){
 
 function getPhotos(){
 	for(var i = 0; i < 3;i++){
-		document.getElementById('main-left').innerHTML += "<div class='index-photo'><a href='photo.html'><img src='images/filegeo.jpg'/></a><p class='photoDescription'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism...<a href='photo.html'>(read full description)</a></p><p><i class='icon-edit icon-2x'></i><a href='photo.html'>1 comment(s)</a><br/><i>Tags:</i>&nbsp<a href='index.html'>bird</a>&nbsp<a href='index.html'>nature</a></p><div class='fb-share-button' data-href='http://student.csse.uwa.edu.au/~21382104/CITS3403/' data-width='200' data-type='button_count'></div><p>Posted by <a href='profile.html'>Italo</a> - 2 minutes ago</p></div><hr class='alt1'/>";
+		document.getElementById('main-left').innerHTML += "<div class='index-photo'><a href='photo.html?id=1234567'><img src='images/filegeo.jpg'/></a><p class='photoDescription'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism...<a href='photo.html?id=1234567'>(read full description)</a></p><p><i class='icon-edit icon-2x'></i><a href='photo.html?id=1234567'>1 comment(s)</a><br/><i>Tags:</i>&nbsp<a href='index.html'>bird</a>&nbsp<a href='index.html'>nature</a></p><div class='fb-share-button' data-href='http://student.csse.uwa.edu.au/~21382104/CITS3403/' data-width='200' data-type='button_count'></div><p>Posted by <a href='profile.html?user=1234567'>Italo</a> - 2 minutes ago</p></div><hr class='alt1'/>";
 	}
 }
 

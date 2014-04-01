@@ -3,38 +3,33 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- TESTS FACEBOOK-->
-		<title>Lamb | Scrumptious</title>
-
-
-		<meta property="og:title" content="Lamb">
-		<meta property="og:site_name" content="Scrumptious">
-
-		<meta name="description" content="Lamb with fava beans and black trumpet mushrooms">
-		<meta property="og:description" content="Lamb with fava beans and black trumpet mushrooms">
-
-
-		<meta property="fb:app_id" content="508355765935469">
-<!-- TESTS FACEBOOK-->
-
 		<link type="text/css" rel="stylesheet" href="css/styles.css" />
-		<link rel="stylesheet" href="css/kickstart.css" media="all" />
+		<link rel="stylesheet" href="css/kickstart.css" media="all" />	
+<!-- TESTS FACEBOOK-->
 
+		<meta property="og:title" content="TITLE" />
+		<meta property="og:site_name" content="SITE_NAME"/>
+		<meta property="og:url" content="http://student.csse.uwa.edu.au/~21382104/CITS3403/photo.html?id=1234567" />
+		<meta property="og:author" content="http://student.csse.uwa.edu.au/~21382104/CITS3403/photo.html?id=1234567" />
+		<meta property="og:image" content="images/filegeo.jpg" />
+		<meta property="og:image:width" content="300" />
+		<meta property="og:image:height" content="300" />
 
+		<meta property="og:description" content="" />
+		<meta property="fb:app_id" content="1423817914534070" />
 
+		<meta property="og:type" content="article" />
+		<meta property="og:locale" content="en_US" />
+	
+<!-- TESTS FACEBOOK-->
+
+		
 	</head>
 	<body class="elements" onload="getNavBar();getFooter();">
 		<!-- FACEBOOK ELEMENTS START-->
 		
 		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
-		fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
+
 		
 		<!-- FACEBOOK ELEMENTS END-->
 
@@ -42,41 +37,44 @@
 
 		<div id="main" style="display:block">
 			<div style="display:flex">
-					<div class="gallery col_5">
-						<a href="images/filegeo.jpg">
-							<img src="images/filegeo.jpg" width="400" height="360" />
-						</a>
+				<div class="gallery col_5">
+					<a href="images/filegeo.jpg">
+						<img src="images/filegeo.jpg" width="400" height="360" />
+					</a>
+					<h5>Comments (2)</h5>
+					<div class="photoComments">
+						<div>
+							<p class="commentHeader"><span class="commentAuthor">Michael Jackson</span> at 23/03/2013 23:13:00 posted:</p>
+							<p class="commentDescription">What a nice picture. Where did you find this bird?</p>
+						</div>
+						<div>
+							<p class="commentHeader"><span class="commentAuthor">Walt Disney</span> at 23/03/2013 23:58:01 posted:</p>
+							<p class="commentDescription">OMG. This picture is awesome. This is a rare bird. Thank you for share!</p>
+						</div>
 					</div>
-					<div class="col_7">
-						<span>Description:</span><br />
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-						</p>
-						<p>
-							<span>Tags:</span>&nbsp
-							<a href='index.html'>bird</a>
-							&nbsp
-							<a href='index.html'>nature</a>
-						</p>
-						<div class='fb-share-button' data-href='http://student.csse.uwa.edu.au/~21382104/CITS3403/photo.html' data-width='200' data-type='button_count'></div>
-						<p>Author: <a href='profile.html'>Italo</a></p>
-						<p>Posted at 23/03/2013 21:00:00</p>
-						<span id="geolocationSpan">
-						</span>
+					<div>
+						<textarea placeholder='You must be logged in to post a comment' 
+						style='width:100%;height:90px;margin-bottom:15px' readonly></textarea>
+						<button disabled="disabled" class="medium blue" style="float:right">Post</button>
 					</div>
-			</div>
-			<h5>Comments (2)</h5>
-			<div class="photoComments">
-				<div>
-					<p class="commentHeader"><span class="commentAuthor">Michael Jackson</span> at 23/03/2013 23:13:00 posted:</p>
-					<p class="commentDescription">What a nice picture. Where did you find this bird?</p>
 				</div>
-				<div>
-					<p class="commentHeader"><span class="commentAuthor">Walt Disney</span> at 23/03/2013 23:58:01 posted:</p>
-					<p class="commentDescription">OMG. This picture is awesome. This is a rare bird. Thank you for share!</p>
+				<div class="col_7">
+					<span>Description:</span>
+					<br />
+					<p id="photoDescription"></p>
+					<p>
+						<span>Tags:</span>&nbsp
+						<a href='index.html'>bird</a>
+						&nbsp
+						<a href='index.html'>nature</a>
+					</p>
+					<div class='fb-share-button' data-href='http://student.csse.uwa.edu.au/~21382104/CITS3403/photo.html?id=1234567' data-width='200' data-type='button_count'></div>
+					<p id='photoAuthor'>Author: <a href='profile.html?user=1234567'>Italo</a></p>
+					<p>Posted at 23/03/2013 21:00:00</p>
+					<span id="geolocationSpan"></span>
 				</div>
 			</div>
 		</div>
-
 		<div id="footer"></div>
 
 		<!-- Javascripts START-->
@@ -84,6 +82,24 @@
 		</script>
 		<script type="text/javascript" src="js/kickstart.js"></script>
 		<script type="text/javascript" src="js/scripts.js"></script>
+
+		<script type="text/javascript">
+
+			
+		(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		var description = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.';
+		$('#photoDescription').html(description);
+		$('meta[property=og\\:description]').attr('content',description);
+		$('meta[property=og\\:title]').attr('content',document.title);
+		$('meta[property=og\\:author]').attr('content',$('#photoAuthor a').html());
+		</script>
+
 		<!-- Javascripts END-->
 	</body>
 </html>
