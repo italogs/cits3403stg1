@@ -23,6 +23,7 @@ body{
 
 .index-photo {
     padding-left: 50px;
+    margin-bottom: 60px;
 }
 
 .index-photo {
@@ -37,9 +38,6 @@ body{
     margin-right: 12px;
 }
 
-.photoComments {
-    
-}
 
 .photoDescription{
     text-align: left;
