@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link type="text/css" rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="css/kickstart.css" media="all" />	
+		
+	</head>
+	<body class="elements" onload="getNavBar();getFooter();resizeImgGallery()">
+		<!-- FACEBOOK ELEMENTS START-->
+		
+		<div id="fb-root"></div>
+		<script type="text/javascript">
+			(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+		
+		<!-- FACEBOOK ELEMENTS END-->
+
+		<nav id="navbar"></nav>
+
+		<div id="main" style="display:block">
+			<span class="profileTextBig">Italo Gomes</span>
+			<br />
+			<br />
+			<span class="profileTextMed">Contact:</span>&nbsp;&nbsp;&nbsp;<a href=""><i class="icon-envelope"></i></a>&nbsp;&nbsp;&nbsp;<a href=""><i class="icon-facebook"></i></a>&nbsp;&nbsp;&nbsp;<a href=""><i class="icon-twitter"></i></a>&nbsp;&nbsp;&nbsp;<a href=""><i class="icon-google-plus"></i></a>
+			<br />
+			<br />
+			<span class="profileTextMed">Gallery</span>
+			<br />
+			<br />
+			<div class="gallery">
+				<a href="images/1.jpg"><img src="images/1.jpg" /></a>
+				<a href="images/2.jpg"><img src="images/2.jpg" /></a>
+				<a href="images/3.jpg"><img src="images/3.jpg" /></a>
+				<a href="images/4.jpg"><img src="images/4.jpg" /></a>
+				<a href="images/5.jpg"><img src="images/5.jpg" /></a>
+				<a href="images/1.jpg"><img src="images/1.jpg" /></a>
+				<a href="images/2.jpg"><img src="images/2.jpg" /></a>
+				<a href="images/3.jpg"><img src="images/3.jpg" /></a>
+				<a href="images/4.jpg"><img src="images/4.jpg" /></a>
+				<a href="images/5.jpg"><img src="images/5.jpg" /></a>
+				<a href="images/1.jpg"><img src="images/1.jpg" /></a>
+				<a href="images/2.jpg"><img src="images/2.jpg" /></a>
+			</div>
+		</div>
+		<div id="footer"></div>
+
+		<!-- Javascripts START-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+		</script>
+		<script type="text/javascript" src="js/kickstart.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+		<!-- Javascripts END-->
+	</body>
+</html>

@@ -4,6 +4,27 @@ $( document ).ready(function() {
 	document.title= "Photos4Life";
 });
 
+function resizeImg(){
+	var width = document.getElementById('photoUser').clientWidth;
+	var height = document.getElementById('photoUser').clientHeight;
+	var newWidth = $('.gallery.col_5').width() - 50;
+	var factor = 100*newWidth/width;
+	$('#photoUser').attr('width',width*(factor/100));
+	$('#photoUser').attr('height',height*(factor/100));
+}
+
+function resizeImgGallery(){
+	var images = document.getElementsByClassName('gallery')[0].getElementsByTagName('img');
+	var newWidth = 100;
+	for (var i = 0; i < images.length; i++) {
+		var width = images[i].clientWidth;
+		var height = images[i].clientHeight;
+		var factor = 100*newWidth/width;
+		images[i].setAttribute('width',width*(factor/100));
+		images[i].setAttribute('height',height*(factor/100));
+	}
+}
+
 function buildNoticeError(msg){
 	var htmlFirst = "<div style='margin-top:0px'class='notice error'><i class='icon-remove-sign icon-large'></i>";
 	var htmlLast = "<a href='#close' class='icon-remove'></a></div>";
@@ -20,7 +41,7 @@ function getFooter(){
 
 function getPhotos(){
 	for(var i = 0; i < 3;i++){
-		document.getElementById('main-left').innerHTML += "<div class='index-photo'><a href='photo.html?id=1234567'><img src='images/filegeo.jpg'/></a><p class='photoDescription'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism...<a href='photo.html?id=1234567'>(read full description)</a></p><p><i class='icon-edit icon-2x'></i><a href='photo.html?id=1234567'>1 comment(s)</a><br/><i>Tags:</i>&nbsp<a href='index.html'>bird</a>&nbsp<a href='index.html'>nature</a></p><p>Posted by <a href='profile.html?user=1234567'>Italo</a> - 2 minutes ago</p></div><hr class='alt1'/>";
+		document.getElementById('main-left').innerHTML += "<div class='index-photo'><a href='photo.html?id=1234567'><img src='images/1.jpg'/></a><p class='photoDescription'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism...<a href='photo.html?id=1234567'>(read full description)</a></p><p><i class='icon-edit icon-2x'></i><a href='photo.html?id=1234567'>1 comment(s)</a><br/><i>Tags:</i>&nbsp<a href='index.html'>bird</a>&nbsp<a href='index.html'>nature</a></p><p>Posted by <a href='profile.html?user=1234567'>Italo</a> - 2 minutes ago</p></div><hr class='alt1'/>";
 	}
 }
 

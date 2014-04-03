@@ -38,6 +38,12 @@ body{
     margin-right: 12px;
 }
 
+.profileTextBig{
+    font-size: 25px;
+}
+.profileTextMed{
+    font-size: 20px;
+}
 
 .photoDescription{
     text-align: left;
