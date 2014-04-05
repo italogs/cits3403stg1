@@ -43,22 +43,21 @@
 		<!-- FACEBOOK ELEMENTS END-->
 
 		<nav id="navbar"></nav>
-
 		<div id="main" style="display:block">
 			<div style="display:flex">
 				<div class="gallery col_5">
-					<a href="images/1.jpg">
-						<img id="photoUser" src="images/1.jpg" onload="resizeImg(this);"/>
+					<a href="">
+						<img id="photoUser" src="" onload=""/>
 					</a>
 					<h5>Comments (2)</h5>
 					<div class="photoComments">
 						<div>
 							<p class="commentHeader"><span class="commentAuthor">Michael Jackson</span> at 23/03/2013 23:13:00 posted:</p>
-							<p class="commentDescription">What a nice picture. Where did you find this bird?</p>
+							<p class="commentDescription">What a nice picture. Where did you find this?</p>
 						</div>
 						<div>
 							<p class="commentHeader"><span class="commentAuthor">Walt Disney</span> at 23/03/2013 23:58:01 posted:</p>
-							<p class="commentDescription">OMG. This picture is awesome. This is a rare bird. Thank you for share!</p>
+							<p class="commentDescription">OMG. This picture is awesome. Thank you for share!</p>
 						</div>
 					</div>
 					<div>
@@ -93,6 +92,31 @@
 
 		<script type="text/javascript" src="js/kickstart.js"></script>
 		<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript">
+		$( document ).ready(function() {
+		    var id = "id".replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");  
+            var regexS = "[\\?&]"+id+"=([^&#]*)";  
+            var regex = new RegExp( regexS );  
+            var results = regex.exec(window.location.href);
+            if(results == null){
+                console.debug("vazio");  
+            }
+            else {
+            	var xhr = new XMLHttpRequest();
+			    xhr.open('HEAD', 'images/'+results[1]+'.jpg', false);
+			    xhr.send();
+			    if (xhr.status == "404") {
+			        alert('não existe');
+			    } else {
+			        $('#photoUser').attr('src','images/'+results[1]+'.jpg');
+			        $('#photoUser')[0].parentNode.attributes[0].value = 'images/'+results[1]+'.jpg';
+			        resizeImg();
+			    }
+            }
+
+
+		});
+		</script>
 		<!-- Javascripts END-->
 	</body>
 </html>

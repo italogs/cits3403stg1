@@ -1,4 +1,6 @@
 //http://www.willpeavy.com/minifier/
+//contact.photos4life@gmail.com
+
 
 $( document ).ready(function() {
 	document.title= "Photos4Life";
@@ -31,18 +33,30 @@ function buildNoticeError(msg){
 	return htmlFirst + msg + htmlLast;
 }
 
-function getNavBar(){
-	document.getElementById('navbar').innerHTML = "<div id='buttons' class='hide-phone'><button type='button' class='small blue' style='margin-right:12px' onclick='goToRegister();'>Sign up</button><label style='font-size:12px;'>Already a member?</label><button type='button' class='small green' style='margin-left:8px' onclick='goToLogIn();'>Log in</button></div><ul><li><a href='index.html'>Photos4Life</a></li><li><a href='index.html'>Get Started</a></li><li><a href='index.html'>Contact us</a></li></ul>";
+function getNavBar() {
+	document.getElementById('navbar').innerHTML = "<div id='buttons' class='hide-phone'><button type='button' class='small blue' style='margin-right:12px' onclick='goToRegister();'>Sign up</button><label style='font-size:12px;'>Already a member?</label><button type='button' class='small green' style='margin-left:8px' onclick='goToLogIn();'>Log in</button></div><ul><li><a href='index.html'>Photos4Life</a></li></ul>";
 }
 
-function getFooter(){
-	document.getElementById('footer').innerHTML = "<a href='http://jigsaw.w3.org/css-validator/check/referer'><img style='border:0;width:88px;height:31px' src='http://jigsaw.w3.org/css-validator/images/vcss' alt='CSS valid!'/></a>&nbsp;<a href='http://validator.w3.org/#validate_by_uri'><img src='http://www.w3.org/html/logo/badge/html5-badge-h-solo.png' width='63' height='64' alt='HTML5 Powered' title='HTML5 Powered'/></a><p>©2014 Photos 4 Life, All Rights Reserved</p>";
+function getFooter() {
+	document.getElementById('footer').innerHTML = "<div class='col_7 footerLeft'><ul class='links'><li><a style='color:inherit' href='index.html'>Index</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li><li><a style='color:inherit' href='contact.html'>Contact us</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li><li><a style='color:inherit' href='register.html'>Sign up</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li><li><a style='color:inherit' href='login.html'>Log in</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li><li><a style='color:inherit' href='about.html'>Disclaimer/About us</a></li></ul><p>©2014 Photos 4 Life, All Rights Reserved</p></div><div class='col_5' class='footerRight'><div><a href='http://jigsaw.w3.org/css-validator/check/referer'><img style='border:0;width:88px;height:31px' src='http://jigsaw.w3.org/css-validator/images/vcss' alt='CSS valid!'/></a><a href='http://validator.w3.org/#validate_by_uri'><img src='http://www.w3.org/html/logo/badge/html5-badge-h-solo.png' width='63' height='64' alt='HTML5 Powered' title='HTML5 Powered'/></a></div><p>Last update:&nbsp;&nbsp;"+getLastModifiedFullDate()+"</p></div>";
 }
 
-function getPhotos(){
-	for(var i = 0; i < 3;i++){
-		document.getElementById('main-left').innerHTML += "<div class='index-photo'><a href='photo.html?id=1234567'><img src='images/1.jpg'/></a><p class='photoDescription'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism...<a href='photo.html?id=1234567'>(read full description)</a></p><p><i class='icon-edit icon-2x'></i><a href='photo.html?id=1234567'>1 comment(s)</a><br/><i>Tags:</i>&nbsp<a href='index.html'>bird</a>&nbsp<a href='index.html'>nature</a></p><p>Posted by <a href='profile.html?user=1234567'>Italo</a> - 2 minutes ago</p></div><hr class='alt1'/>";
+function getPhotos() {
+	for(var i = 1; i < 6;i++){
+		document.getElementById('main-left').innerHTML += "<div class='index-photo'><a href='photo.html?id="+i+"'><img src='images/"+i+"srk.jpg'/></a><p class='photoDescription'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism...<a href='photo.html?id="+i+"'>(read full description)</a></p><p><i class='icon-edit icon-2x'></i><a href='photo.html?id="+i+"'>1 comment(s)</a><br/><i>Tags:</i>&nbsp<a href='index.html'>bird</a>&nbsp<a href='index.html'>nature</a></p><p>Posted by <a href='profile.html?user=1234567'>Italo</a> - 2 minutes ago</p></div><hr class='alt1'/>";
 	}
+	document.getElementById('main-left').innerHTML += "<div id='pagination'><ul><li><a href='index.html'><<</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'><</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>1</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>2</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>3</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>></a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>>></a></li></ul></div>";
+}
+
+function getLastModifiedDate(){
+	return new Date(Date.parse(document.lastModified));
+}
+
+function getLastModifiedFullDate(){
+	var newObjDate = getLastModifiedDate();
+	var date = [newObjDate.getDate(),newObjDate.getMonth(),newObjDate.getFullYear()].join("/");
+	var time = [newObjDate.getHours(),newObjDate.getMinutes(),newObjDate.getSeconds()].join(":");
+	return date + " " + time;
 }
 
 function searchPhotosUsers(a){
@@ -180,4 +194,43 @@ function isRegisterDataValid(){
 	}
 
 	return valid;
-}	
+}
+
+function submitContact(){
+	$('#noticeForm').html('');
+	var name = $('#inputName').val();
+	var email = $('#inputEmail').val();
+	var message = $('#inputMessage').val();
+	$('#inputName').removeClass();
+	$('#inputEmail').removeClass();
+	$('#inputMessage').removeClass();
+
+	var re = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+	var valid = true;
+
+	if(name.length == 0){
+		valid = false;
+		$('#inputName').addClass('error');
+		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Name is required"));
+	}
+
+	if(email.length == 0){
+		valid = false;
+		$('#inputEmail').addClass('error');
+		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Email is required"));
+	} else if(!re.test(email)){
+		valid = false;
+		$('#inputEmail').addClass('error');
+		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Invalid email"));
+	}
+
+	if(message.length == 0){
+		valid = false;
+		$('#inputMessage').addClass('error');
+		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Message is required"));
+	}
+
+	if(valid){
+		alert('Your message was sent. Thank you');
+	}
+}

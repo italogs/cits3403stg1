@@ -63,9 +63,43 @@ body{
     margin: 5px 15px 5px 10px;
 }
 
+#pagination {
+    text-align: center;
+}
+
+#pagination ul{
+    list-style-type:none;
+}
+
+#pagination ul li{
+  display: inline;
+}
+
+.links{
+    list-style-type: square;
+}
+
+.links li{
+    display:inline;
+}
+
+.links li a{
+    text-decoration: none;
+}
+
+.links li a:hover{
+    background-color:#AAAAAA;
+}
+
+.footerLeft p{
+    padding-left: 20px;
+}
+
 #footer{
-    margin:70px 50px 50px 50px;
-    float:right;
+    display:flex;
+    background: none repeat scroll 0 0 #DDDDDD;
+    padding-left: 50px;
+    padding-top: 20px;
 }
 
 #footer p{
