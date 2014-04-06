@@ -6,27 +6,6 @@ $( document ).ready(function() {
 	document.title= "Photos4Life";
 });
 
-function resizeImg(){
-	var width = document.getElementById('photoUser').clientWidth;
-	var height = document.getElementById('photoUser').clientHeight;
-	var newWidth = $('.gallery.col_5').width() - 50;
-	var factor = 100*newWidth/width;
-	$('#photoUser').attr('width',width*(factor/100));
-	$('#photoUser').attr('height',height*(factor/100));
-}
-
-function resizeImgGallery(){
-	var images = document.getElementsByClassName('gallery')[0].getElementsByTagName('img');
-	var newWidth = 100;
-	for (var i = 0; i < images.length; i++) {
-		var width = images[i].clientWidth;
-		var height = images[i].clientHeight;
-		var factor = 100*newWidth/width;
-		images[i].setAttribute('width',width*(factor/100));
-		images[i].setAttribute('height',height*(factor/100));
-	}
-}
-
 function buildNoticeError(msg){
 	var htmlFirst = "<div style='margin-top:0px'class='notice error'><i class='icon-remove-sign icon-large'></i>";
 	var htmlLast = "<a href='#close' class='icon-remove'></a></div>";
