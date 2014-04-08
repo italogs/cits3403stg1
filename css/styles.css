@@ -25,7 +25,7 @@ body{
     margin-bottom: 100px;
 }
 
-.gallery a img {
+.gallery#author a img {
     width:180px;
     height:180px;
 }
