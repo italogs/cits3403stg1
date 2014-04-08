@@ -2,11 +2,11 @@
 //contact.photos4life@gmail.com
 
 
-$( document ).ready(function() {
-	document.title= "Photos4Life";
+$(document).ready( function() {
+	document.title = "Photos4Life";
 });
 
-function buildNoticeError(msg){
+function buildNoticeError(msg) {
 	var htmlFirst = "<div style='margin-top:0px'class='notice error'><i class='icon-remove-sign icon-large'></i>";
 	var htmlLast = "<a href='#close' class='icon-remove'></a></div>";
 	return htmlFirst + msg + htmlLast;
@@ -21,26 +21,26 @@ function getFooter() {
 }
 
 function getPhotos() {
-	for(var i = 1; i < 6;i++){
+	for(var i = 1; i < 6;i++) {
 		document.getElementById('main-left').innerHTML += "<div class='index-photo'><a href='photo.html?id="+i+"'><img src='images/"+i+"srk.jpg'/></a><p class='photoDescription'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism...<a href='photo.html?id="+i+"'>(read full description)</a></p><p><i class='icon-edit icon-2x'></i><a href='photo.html?id="+i+"'>1 comment(s)</a><br/><i>Tags:</i>&nbsp<a href='index.html'>bird</a>&nbsp<a href='index.html'>nature</a></p><p>Posted by <a href='profile.html?user=1234567'>Italo</a> - 2 minutes ago</p></div><hr class='alt1'/>";
 	}
 	document.getElementById('main-left').innerHTML += "<div id='pagination'><ul><li><a href='index.html'><<</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'><</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>1</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>2</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>3</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>></a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>>></a></li></ul></div>";
 }
 
-function getLastModifiedDate(){
+function getLastModifiedDate() {
 	return new Date(Date.parse(document.lastModified));
 }
 
-function getLastModifiedFullDate(){
+function getLastModifiedFullDate() {
 	var newObjDate = getLastModifiedDate();
 	var date = [newObjDate.getDate(),newObjDate.getMonth(),newObjDate.getFullYear()].join("/");
 	var time = [newObjDate.getHours(),newObjDate.getMinutes(),newObjDate.getSeconds()].join(":");
 	return date + " " + time;
 }
 
-function searchPhotosUsers(a){
+function searchPhotosUsers(a) {
 	var query = $('#textSearch').val();
-	if(query.length == 0){
+	if(query.length == 0) {
 		alert('Please, provide some information.');
 	} else {
 		var type = $('#selectType').val();
@@ -53,26 +53,26 @@ function searchPhotosUsers(a){
 	}
 }
 
-function goToLogIn(){
+function goToLogIn() {
 	location.href="login.html";
 }
 
-function goToRegister(){
+function goToRegister() {
 	location.href="register.html";
 }
 
-function makeLogin(){
-	if(isLoginDataValid()){
+function makeLogin() {
+	if(isLoginDataValid()) {
 		alert("Welcome, <USERNAME>. You are being redirected.");
 		location.href = "index.html";
 	}
 }
 
-function checkPasswordsOnBlur(){
+function checkPasswordsOnBlur() {
 	
 }
 
-function isLoginDataValid(){
+function isLoginDataValid() {
 	$('#formEmail').removeClass();
 	$('#formPassword').removeClass();
 	$('#noticeForm').html('');
@@ -81,11 +81,11 @@ function isLoginDataValid(){
 	var valid = true;
 	var re = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
-	if(email.length == 0){
+	if(email.length == 0) {
 		$('#formEmail').addClass('error');
 		$('#noticeForm').html(buildNoticeError("Email must be provided"));
 		valid = false;
-	} else if(!re.test(email)){
+	} else if(!re.test(email)) {
 		$('#formEmail').addClass('error');
 		$('#noticeForm').html(buildNoticeError("You must enter a valid email"));
 		valid = false;
@@ -99,32 +99,32 @@ function isLoginDataValid(){
 	return valid;
 }
 
-function passwordsMatch(){
+function passwordsMatch() {
  	return $('#inputPassword').val() == $('#inputPasswordRepeat').val();
 }
 
-function checkPasswords(){
+function checkPasswords() {
 	$('#inputPasswordRepeat').removeClass();
 	$('#noticeForm').html('');
-	if(!passwordsMatch()){
+	if(!passwordsMatch()) {
 		$('#inputPasswordRepeat').addClass('error');
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Passwords don't match"));
 	}
 }
 
-function submitRegisterData(){
-	if(isRegisterDataValid()){
+function submitRegisterData() {
+	if(isRegisterDataValid()) {
 		alert("Congratulations. Your data has been accepted. Now you're a member.");
 		location.href = "index.html";
 	}
 }
 
-function checkPasswordsOnBlur(){
+function checkPasswordsOnBlur() {
 
 
 }
 
-function isRegisterDataValid(){
+function isRegisterDataValid() {
 	$('#inputFirstName').removeClass();
 	$('#inputSurname').removeClass();
 	$('#inputEmail').removeClass();
@@ -141,55 +141,55 @@ function isRegisterDataValid(){
 	var re = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 	var valid = true;
 
-	if(firstName.length == 0){
+	if(firstName.length == 0) {
 		valid = false;
 		$('#inputFirstName').addClass('error');
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("First name is required"));
 	}
 
-	if(surname.length == 0){
+	if(surname.length == 0) {
 		valid = false;
 		$('#inputSurname').addClass('error');
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Surname is required"));
 	}
 
-	if(email.length == 0){
+	if(email.length == 0) {
 		valid = false;
 		$('#inputEmail').addClass('error');
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Email is required"));
-	} else if(!re.test(email)){
+	} else if(!re.test(email)) {
 		valid = false;
 		$('#inputEmail').addClass('error');
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("You must provide a valid email"));
 	}
 
-	if(password.length == 0){
+	if(password.length == 0) {
 		valid = false;
 		$('#inputPassword').addClass('error');
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Password is required"));
 	}
 
-	if(passwordRepeat.length == 0){
+	if(passwordRepeat.length == 0) {
 		valid = false;
 		$('#inputPasswordRepeat').addClass('error');
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("You must confirm your password"));
 	}
 
-	if(password.length != 0 && passwordRepeat.length != 0 && !passwordsMatch()){
+	if(password.length != 0 && passwordRepeat.length != 0 && !passwordsMatch()) {
 		valid = false;
 		$('#inputPassword').addClass('error');
 		$('#inputPasswordRepeat').addClass('error');
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Passwords don't match"));
 	}
 
-	if(!valid){
+	if(!valid) {
 		location.href="#";
 	}
 
 	return valid;
 }
 
-function submitContact(){
+function submitContact() {
 	$('#noticeForm').html('');
 	var name = $('#inputName').val();
 	var email = $('#inputEmail').val();
@@ -201,31 +201,31 @@ function submitContact(){
 	var re = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 	var valid = true;
 
-	if(name.length == 0){
+	if(name.length == 0) {
 		valid = false;
 		$('#inputName').addClass('error');
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Name is required"));
 	}
 
-	if(email.length == 0){
+	if(email.length == 0) {
 		valid = false;
 		$('#inputEmail').addClass('error');
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Email is required"));
-	} else if(!re.test(email)){
+	} else if(!re.test(email)) {
 		valid = false;
 		$('#inputEmail').addClass('error');
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Invalid email"));
 	}
 
-	if(message.length == 0){
+	if(message.length == 0) {
 		valid = false;
 		$('#inputMessage').addClass('error');
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Message is required"));
 	}
 
-	if(!valid){
+	if(!valid) {
 		location.href="#";
-	} else if(valid){
+	} else if(valid) {
 		alert('Your message was sent. Thank you');
 	}
 }
