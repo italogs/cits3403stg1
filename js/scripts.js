@@ -95,6 +95,7 @@ function isLoginDataValid(){
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Password must be provided"));
 		valid = false;
 	}
+
 	return valid;
 }
 
@@ -116,6 +117,11 @@ function submitRegisterData(){
 		alert("Congratulations. Your data has been accepted. Now you're a member.");
 		location.href = "index.html";
 	}
+}
+
+function checkPasswordsOnBlur(){
+
+
 }
 
 function isRegisterDataValid(){
@@ -176,6 +182,10 @@ function isRegisterDataValid(){
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Passwords don't match"));
 	}
 
+	if(!valid){
+		location.href="#";
+	}
+
 	return valid;
 }
 
@@ -213,7 +223,9 @@ function submitContact(){
 		$('#noticeForm').html($('#noticeForm').html() + buildNoticeError("Message is required"));
 	}
 
-	if(valid){
+	if(!valid){
+		location.href="#";
+	} else if(valid){
 		alert('Your message was sent. Thank you');
 	}
 }

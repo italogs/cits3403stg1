@@ -8,10 +8,11 @@ Student number : 21382104
 Reference page : http://student.csse.uwa.edu.au/~21382104/CITS3403/reference.html
 
 
+
 Javascript:
 
 I've created a javascript file called js/scripts.js. It contains methods related to form validations,
-redirect pages and get html components(layout).
+redirect pages and html components(layout) on javascript level.
 For example, the page register.html validates all fields. Specifically, the email field is validated
 using regular expression to ensure the correct use the field.
 All fields of register.html show a error message if the data has not been provided or wrongly inserted.
