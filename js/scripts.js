@@ -68,6 +68,10 @@ function makeLogin(){
 	}
 }
 
+function checkPasswordsOnBlur(){
+	
+}
+
 function isLoginDataValid(){
 	$('#formEmail').removeClass();
 	$('#formPassword').removeClass();

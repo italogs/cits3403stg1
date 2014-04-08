@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<title>-</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link type="text/css" rel="stylesheet" href="css/styles.css" />
 		<link rel="stylesheet" href="css/kickstart.css" media="all" />
@@ -42,7 +43,7 @@
 
 				<label for="inputPassword">Password<span class="right">Minimum 8 characters</span>
 				</label>
-				<input id="inputPassword" type="password"/>
+				<input id="inputPassword" type="password" onblur="checkPasswordsOnBlur()"/>
 
 				<label for="inputPasswordRepeat">Repeat password</label>
 				<input id="inputPasswordRepeat" type="password" onblur="checkPasswords();"/>
