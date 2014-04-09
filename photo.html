@@ -103,15 +103,8 @@
             	$('#main').html('Photo not found');
             }
             else {
-            	var xhr = new XMLHttpRequest();
-			    xhr.open('HEAD', 'images/'+results[1]+'.jpg', false);
-			    xhr.send();
-			    if (xhr.status == "404") {
-			        $('#main').html('Photo not found');
-			    } else {
-			        $('#photoUser').attr('src','images/'+results[1]+'img.jpg');
-			        $('#photoUser').parent().attr('href','images/'+results[1]+'img.jpg');
-			    }
+            	$('#photoUser').attr('src','images/'+results[1]+'img.jpg');
+		        $('#photoUser').parent().attr('href','images/'+results[1]+'img.jpg');
             }
 		});
 		</script>
