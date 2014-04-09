@@ -46,3 +46,7 @@ The website is valid for HTML 5 and CSS 2.1. Each page has a own link to check i
 After the user registers valid data on register.html, the website will show a success message to the user. However, there is no user session implemented due to the website has only static pages.
 The same applies to when the user tries to log in.
 
+Possible failures:
+I tested the Internet Explorer from the Computer Science Laboratory(WINDOWS OS), and the website didn't rendered completely(the offline version). However, If you try the online version, it will render correctly.
+
+
