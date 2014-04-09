@@ -9,18 +9,19 @@
 		<style type="text/css">
 		#main div label,input,textarea {
 			display: block;
-			width: 250px
+			width: 100%
 		}
 		#main div label {
 			margin-top: 15px;
 		}
 		#main div button {
 			margin-top: 20px;
+			margin-bottom: 20px;
 			float:right;
 		}
-		#main div {
-			margin-left: -100px ;
-			margin-top: 70px;
+		#main div{
+			margin-left: 120px;
+			width:320px;
 		}
 		</style>
 	</head>
@@ -49,7 +50,7 @@
 				<input id="inputPasswordRepeat" type="password" onblur="checkPasswords();"/>
 
 				<label for="terms">Terms and conditions</label>
-				<textarea id="terms" style="height:150px;width:300px;" readonly>1.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+				<textarea id="terms" style="height:150px;" readonly>1.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
 
 				<button class="medium blue" onclick="submitRegisterData();">I accept the terms. Register-me</button>
 			</div>
