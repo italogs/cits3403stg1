@@ -2,10 +2,6 @@
 //contact.photos4life@gmail.com
 //http://try.powermapper.com/Demo/ViewSitemap/9e6c72e5-b2cb-4267-8b08-a2b660c0009d
 
-$(document).ready( function() {
-	document.title = "Photos4Life";
-});
-
 function buildNoticeError(msg) {
 	var htmlFirst = "<div style='margin-top:0px'class='notice error'><i class='icon-remove-sign icon-large'></i>";
 	var htmlLast = "<a href='#close' class='icon-remove'></a></div>";
