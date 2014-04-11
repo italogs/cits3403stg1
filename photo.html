@@ -10,15 +10,15 @@
 
 		<meta property="og:title" content="Shared photo" />
 		<meta property="og:site_name" content="Photos4Life"/>
-		<meta property="og:url" content="http://student.csse.uwa.edu.au/~21382104/CITS3403/photo.html?id=1234567" />
+		<meta property="og:url" content="" />
 
-		<meta property="og:image" content="http://student.csse.uwa.edu.au/~21382104/CITS3403/images/1.jpg">
+		<meta property="og:image" content="">
 		<meta property="og:image:type" content="image/jpeg">
 		<meta property="og:image:width" content="300">
 		<meta property="og:image:height" content="300">
 
 
-		<meta property="og:description" content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."/>
+		<meta property="og:description" content=""/>
 		<meta property="fb:app_id" content="1423817914534070" />
 
 		<meta property="og:locale" content="en_US" />
@@ -44,9 +44,13 @@
 		<!-- FACEBOOK ELEMENTS END-->
 
 		<nav id="navbar"></nav>
+
 		<div id="main" style="display:block">
+
 			<div style="display:flex">
+
 				<div class="gallery col_5">
+
 					<a>
 						<img id="photoUser" src="images/default.jpg" alt=""/>
 					</a>
@@ -70,18 +74,11 @@
 				<div class="col_7">
 					<span>Description:</span>
 					<br />
-					<p id="photoDescription">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-					</p>
-					<p>
-						<span>Tags:</span>&nbsp;
-						<a href='index.html'>bird</a>
-						&nbsp;
-						<a href='index.html'>nature</a>
-					</p>
-					<div class='fb-share-button' data-href='http://student.csse.uwa.edu.au/~21382104/CITS3403/photo.html?id=1234567' data-width='200' data-type='button_count'></div>
+					<p id="photoDescription"></p>
+					<p id="photoTags"></p>
+					<div class='fb-share-button' data-href='' data-width='200' data-type='button_count'></div>
 					<p id='photoAuthor'>Author: <a href='profile.html?user=1234567'>Italo</a></p>
 					<p>Posted at 23/03/2013 21:00:00</p>
-					<span id="geolocationSpan"></span>
 				</div>
 			</div>
 		</div>
@@ -105,6 +102,18 @@
             else {
             	$('#photoUser').attr('src','images/'+results[1]+'img.jpg');
 		        $('#photoUser').parent().attr('href','images/'+results[1]+'img.jpg');
+				document.getElementById("photoDescription").innerHTML = getDescriptionImageById(results[1]);
+				var tags = getTagsImageById(results[1]);
+				if(tags.length > 0){
+					HTMLtag = "<span>Tags:</span>&nbsp;";
+					HTMLtag += "<a href='index.html'>" + tags.join("</a>&nbsp;<a href='index.html'>") + "</a>";
+					document.getElementById("photoTags").innerHTML = HTMLtag;
+				}
+		        $('meta[property=og\\:url]').attr('content',window.location.href);
+		        $('meta[property=og\\:description]').attr('content',getDescriptionImageById(results[1]));
+		        $('meta[property=og\\:image]').attr('content',"http://student.csse.uwa.edu.au/~21382104/CITS3403/images/"+
+		        	results[1]+"img.jpg");
+		        $('.fb-share-button').attr('data-href',window.location.href);
             }
 		});
 		</script>

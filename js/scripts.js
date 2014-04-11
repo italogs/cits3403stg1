@@ -1,6 +1,6 @@
 //http://www.willpeavy.com/minifier/
 //contact.photos4life@gmail.com
-
+//http://try.powermapper.com/Demo/ViewSitemap/9e6c72e5-b2cb-4267-8b08-a2b660c0009d
 
 $(document).ready( function() {
 	document.title = "Photos4Life";
@@ -18,13 +18,6 @@ function getNavBar() {
 
 function getFooter() {
 	document.getElementById('footer').innerHTML = "<div class='col_7 footerLeft'><ul class='links'><li><a style='color:inherit' href='index.html'>Index</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li><li><a style='color:inherit' href='contact.html'>Contact us</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li><li><a style='color:inherit' href='register.html'>Sign up</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li><li><a style='color:inherit' href='login.html'>Log in</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li><li><a style='color:inherit' href='about.html'>Disclaimer/About us</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li><li><a style='color:inherit' href='reference.html'>Reference</a></li></ul><p>©2014 Photos 4 Life, All Rights Reserved</p></div><div class='col_5' class='footerRight'><div><a href='http://css-validator.org/check/referer'><img style='border:0;width:88px;height:31px' src='http://css-validator.org/images/vcss.png' alt='Valid CSS!' /></a><a href='http://validator.w3.org/check/referer'><img src='http://www.w3.org/html/logo/badge/html5-badge-h-solo.png' width='63' height='64' alt='HTML5 Powered' title='HTML5 Powered'/></a></div><p>Last update:&nbsp;&nbsp;"+getLastModifiedFullDate()+"</p></div>";
-}
-
-function getPhotos() {
-	for(var i = 1; i < 6;i++) {
-		document.getElementById('main-left').innerHTML += "<div class='index-photo'><a href='photo.html?id="+i+"'><img src='images/"+i+"srk.jpg'/></a><p class='photoDescription'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euism...<a href='photo.html?id="+i+"'>(read full description)</a></p><p><i class='icon-edit icon-2x'></i><a href='photo.html?id="+i+"'>1 comment(s)</a><br/><i>Tags:</i>&nbsp<a href='index.html'>bird</a>&nbsp<a href='index.html'>nature</a></p><p>Posted by <a href='profile.html?user=1234567'>Italo</a> - 2 minutes ago</p></div><hr class='alt1'/>";
-	}
-	document.getElementById('main-left').innerHTML += "<div id='pagination'><ul><li><a href='index.html'><<</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'><</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>1</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>2</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>3</a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>></a></li>&nbsp;&nbsp;&nbsp;<li><a href='index.html'>>></a></li></ul></div>";
 }
 
 function getLastModifiedDate() {
@@ -68,9 +61,49 @@ function makeLogin() {
 	}
 }
 
-function checkPasswordsOnBlur() {
-	
+function getDescriptionImageById(idImage){
+	switch(idImage){
+		case "1":
+			return "This very rare bird was found in Sydney. I was extremelly lucky to find it. Does anyone know the breed?";
+			break;
+		case "2":
+			return "I made this picture using microsoft paint.";
+			break;
+		case "3":
+			return "I took this picture last winter in Asia. Awesome, isn't it?";
+			break;
+		case "4":
+			return "It's hard to describe how beautiful it is this place.";
+			break;
+		case "5":
+			return "Hi, I bought a nice laptop. See the surface details.";
+			break;
+	}
+	return "The user has not written a description.";
 }
+
+function getTagsImageById(idImage){
+	switch(idImage){
+		case "1":
+			return ['bird','nature'];
+			break;
+		case "2":
+			return ['computer','paint','bottle'];
+			break;
+		case "3":
+			return ['holidays','vacation','sea'];
+			break;
+		case "4":
+			return ['bridge','NZ'];
+			break;
+		case "5":
+			return ['laptop','power button','computer'];
+			break;
+	}
+	return "";
+}
+
+
 
 function isLoginDataValid() {
 	$('#formEmail').removeClass();
