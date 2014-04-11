@@ -48,4 +48,8 @@ Final Comments:
 - After the user registers valid data on register.html, the website will show a success message to the user. However, there is no user session implemented due to the website has only static pages.
 The same applies to when the user tries to log in.
 
-- 
+About website's structure:
+
+I have created an image that represents the whole website and its hierarchical structure.
+It is found on http://student.csse.uwa.edu.au/~21382104/CITS3403/about.html
+or on this direct link: http://student.csse.uwa.edu.au/~21382104/CITS3403/images/sitestructure.png
