@@ -42,6 +42,10 @@ HTML text and a javascript call. It is responsible to get the file last modified
 
 
 Final Comments:
-The website is valid for HTML 5 and CSS 2.1. Each page has a own link to check its validation through the images provided on the footer.
-After the user registers valid data on register.html, the website will show a success message to the user. However, there is no user session implemented due to the website has only static pages.
+
+- The website is valid for HTML 5 and CSS 2.1. Each page has a own link to check its validation through the images provided on the footer.
+
+- After the user registers valid data on register.html, the website will show a success message to the user. However, there is no user session implemented due to the website has only static pages.
 The same applies to when the user tries to log in.
+
+- 
