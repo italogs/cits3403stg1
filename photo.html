@@ -28,27 +28,13 @@
 		
 	</head>
 	<body class="elements" onload="getNavBar();getFooter();">
-		<!-- FACEBOOK ELEMENTS START-->
-		
-		<div id="fb-root"></div>
-		<script type="text/javascript">
-			(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
-			fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-		</script>
-		
-		<!-- FACEBOOK ELEMENTS END-->
+	
 
 		<nav id="navbar"></nav>
 
 		<div id="main" style="display:block">
 
-			<div style="display:flex">
-
+			<div>
 				<div class="gallery col_5">
 
 					<a>
@@ -76,7 +62,6 @@
 					<br />
 					<p id="photoDescription"></p>
 					<p id="photoTags"></p>
-					<div class='fb-share-button' data-href='' data-width='200' data-type='button_count'></div>
 					<p id='photoAuthor'>Author: <a href='profile.html?user=1234567'>Italo</a></p>
 					<p>Posted at 23/03/2013 21:00:00</p>
 				</div>

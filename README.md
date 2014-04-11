@@ -50,6 +50,6 @@ The same applies to when the user tries to log in.
 
 About website's structure:
 
-I have created an image that represents the whole website and its hierarchical structure.
+-I have created an image that represents the whole website and its hierarchical structure.
 It is found on http://student.csse.uwa.edu.au/~21382104/CITS3403/about.html
 or on this direct link: http://student.csse.uwa.edu.au/~21382104/CITS3403/images/sitestructure.png
